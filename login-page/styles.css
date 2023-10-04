@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: #E2D1F9;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+ul{
+    list-style: none;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 250px;
+    align-items: center;
+}
+.text-input{
+    width: 250px;
+    border: none;
+    background-color: #fff;
+    height: 100px;
+    border-radius: 8px;
+}
