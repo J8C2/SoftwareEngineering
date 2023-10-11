@@ -14,11 +14,11 @@
             <button class="user-type-button">Admin</button>
             <button class="user-type-button">Student</button>
         </div>
-
-        <input placeholder="Username" class="login-inputs" type="email">
-        <input placeholder="Password" class="login-inputs" type="password">
-        <button type="submit" class="sign-in-button">Submit</button>
-
+        <form onsubmit="submitForm(event)" id="form">
+            <input id="email" placeholder="Email" class="login-inputs" type="email">
+            <input id="password" placeholder="Password" class="login-inputs" type="password">
+            <button value="Register" type="submit" class="sign-in-button">Submit</button>
+        </form>
     </div>
 </body>
 </html>
