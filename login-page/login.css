@@ -73,9 +73,14 @@ body{
     opacity: 0.6;
 }
 .register-button{
-    font-weight: bold;
-    width: 266px;
-    background-color: rgb(178, 131, 247);
+    display: inline-block;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color:  rgb(178, 131, 247);
+            color: #fff;
+            text-decoration: none; 
+            border: none;
+            cursor: pointer;
 }
 .register-button:hover, .user-type-button:hover{
     cursor: pointer;
