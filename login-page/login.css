@@ -72,3 +72,16 @@ body{
     cursor: pointer;
     opacity: 0.6;
 }
+.register-button{
+    font-weight: bold;
+    width: 266px;
+    background-color: rgb(178, 131, 247);
+}
+.register-button:hover, .user-type-button:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+.register-button:active, .user-type-button:active{
+    cursor: pointer;
+    opacity: 0.6;
+}
