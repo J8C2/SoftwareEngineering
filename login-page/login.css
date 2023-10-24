@@ -99,4 +99,16 @@ body{
     opacity: 0.6;
 }
 
+.sign-up-button{
+    display: inline-block;
+            font-weight: bold;
+            padding: 10px 20px;
+            width: 266px;
+            background-color:  rgb(178, 131, 247);
+            color: #fff;
+            text-decoration: none; 
+            border: none;
+            cursor: pointer;
+}
+
 
