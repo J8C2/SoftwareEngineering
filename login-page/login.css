@@ -27,6 +27,7 @@ body{
 .title{
     color: #fff;
     font-size: 30px;
+    outline: none;
 }
 .login-inputs, button{
     font-size: 20px;
@@ -59,6 +60,11 @@ body{
     padding-right: 5px;
     background-color: rgb(178, 131, 247);
 }
+
+.user-type-button:active {
+    background-color: #a51313; 
+    box-shadow: 0 2px 4px rgba(241, 238, 238, 0.2);
+}
 .sign-in-button{
     font-weight: bold;
     width: 266px;
@@ -72,6 +78,8 @@ body{
     cursor: pointer;
     opacity: 0.6;
 }
+
+/* For registration html */
 .register-button{
     display: inline-block;
             font-weight: bold;
@@ -90,3 +98,5 @@ body{
     cursor: pointer;
     opacity: 0.6;
 }
+
+

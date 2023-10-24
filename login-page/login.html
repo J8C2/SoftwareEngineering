@@ -10,16 +10,18 @@
 <body>
     <div class="center-page">
         <h1 class="title">Login</h1>
-        <div class="user-type">
-            <button class="user-type-button">Admin</button>
-            <button class="user-type-button">Student</button>
-        </div>
+
         <form onsubmit="submitForm(event)" id="form">
+            <div class="user-type">
+                <button id = "admin" class="user-type-button">Admin</button>
+                <button id = "student" class="user-type-button">Student</button>
+            </div>
             <input id="email" placeholder="Email" class="login-inputs" type="email">
             <input id="password" placeholder="Password" class="login-inputs" type="password">
             <button value="Submit" type="submit" class="sign-in-button">Submit</button>
             <a href="register.html" class="register-button">Register</a>
         </form>
+        
     </div>
 </body>
 </html>
