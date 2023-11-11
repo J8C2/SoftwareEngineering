@@ -7,4 +7,6 @@ import com.attendance.attendancehub.model.Student;
 public interface StudentService {
     
     List<Student> getAllStudents();
+
+    void saveStudent(Student student);
 }
