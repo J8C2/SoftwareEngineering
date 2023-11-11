@@ -31,7 +31,7 @@ public class StudentController {
         //create model attribute to bind form data
         Student student = new Student();
         model.addAttribute("student", student);
-        return "new_employee";
+        return "new_Student";
     }
 
     //crating a controller to handle save student request
