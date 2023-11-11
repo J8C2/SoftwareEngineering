@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Attendance Hub</title>
+</head>
+<body>
+
+<div align="center">
+    <h1> Students List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th> Student First Name</th>
+                <th> Student Last Name</th>
+                <th> Student Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="student : ${listStudents}">
+                <td th:text="${student.firstName}"></td>
+                <td th:text="${student.lastName}"></td>
+                <td th:text="${student.email}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>    
+</body>
+</html>
+  
