@@ -10,4 +10,6 @@ public class AttendancehubApplication {
 		SpringApplication.run(AttendancehubApplication.class, args);
 	}
 
+	//Code works up to this point - It has been tested
+
 }
