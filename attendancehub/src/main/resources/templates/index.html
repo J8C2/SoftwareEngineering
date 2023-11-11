@@ -22,6 +22,7 @@
                 <th> Student First Name</th>
                 <th> Student Last Name</th>
                 <th> Student Email</th>
+                <th> Actions </th>
             </tr>
         </thead>
         <tbody>
@@ -29,6 +30,7 @@
                 <td th:text="${student.firstName}"></td>
                 <td th:text="${student.lastName}"></td>
                 <td th:text="${student.email}"></td>
+                <td th:ref="@{/showformForUpdate/{id}(id=${student.id})}" class="btn btn-primary">Update</a></td>
             </tr>
         </tbody>
     </table>
