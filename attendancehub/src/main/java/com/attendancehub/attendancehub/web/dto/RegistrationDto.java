@@ -1,4 +1,4 @@
-package dto;
+package com.attendancehub.attendancehub.web.dto;
 
 public class RegistrationDto {
     private String firstName;
@@ -10,6 +10,7 @@ public class RegistrationDto {
 
     
     public RegistrationDto(String firstName, String lastName, String email, String password) {
+        super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

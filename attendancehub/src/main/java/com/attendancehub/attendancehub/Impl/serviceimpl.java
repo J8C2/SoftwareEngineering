@@ -1,15 +1,15 @@
-package Impl;
+package com.attendancehub.attendancehub.Impl;
 
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import dto.RegistrationDto;
-import entity.Role;
-import entity.User;
-import repository.UserRepository;
-import service.service;
+import com.attendancehub.attendancehub.Role;
+import com.attendancehub.attendancehub.User;
+import com.attendancehub.attendancehub.repository.UserRepository;
+import com.attendancehub.attendancehub.service.service;
+import com.attendancehub.attendancehub.web.dto.RegistrationDto;
 
 @Service
 public class serviceimpl implements service

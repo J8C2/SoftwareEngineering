@@ -1,7 +1,6 @@
-package entity;
+package com.attendancehub.attendancehub;
 
 import java.util.Collection;
-
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

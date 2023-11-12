@@ -1,4 +1,4 @@
-package web;
+package com.attendancehub.attendancehub.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,13 +6,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import dto.RegistrationDto;
-import service.service;
+import com.attendancehub.attendancehub.service.service;
+import com.attendancehub.attendancehub.web.dto.RegistrationDto;
 
 @Controller
 @RequestMapping("/registration")
 public class controller 
 {
+    
     private service userService;
 
     public controller(service userService) 
@@ -34,9 +35,9 @@ public class controller
     }
 
     @PostMapping
-    public String registerUserAccount(@ModelAttribute("user") RegistrationDto reigstrationDto)
+    public String registerUserAccount(@ModelAttribute("user") RegistrationDto registrationDto)
     {
-        userService.save(reigstrationDto);
+        userService.save(registrationDto);
         return "redirect:/registration?success";
     }
 }

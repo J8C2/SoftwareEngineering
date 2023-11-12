@@ -1,4 +1,4 @@
-package entity;
+package com.attendancehub.attendancehub;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,6 +18,7 @@ public class Role
     
 
     public Role(String name) {
+        super();
         this.name = name;
     }
     
