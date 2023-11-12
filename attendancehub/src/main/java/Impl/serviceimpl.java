@@ -26,7 +26,7 @@ public class serviceimpl implements service
     @Override
     public User save(RegistrationDto registrationDto) 
     {
-        User user = new User(registrationDto.getFirst(), registrationDto.getLast(), registrationDto.getEmail(), registrationDto.getPassword(), Arrays.asList(new Role("ROLE_USER")));
+        User user = new User(registrationDto.getFirstName(), registrationDto.getLastName(), registrationDto.getEmail(), registrationDto.getPassword(), Arrays.asList(new Role("ROLE_USER")));
         return userRepository.save(user);
     }
     
