@@ -45,7 +45,7 @@ public class StudentController {
 
     }
 
-    @GetMapping("/showFormUpdate/{id}")
+    @GetMapping("/showFormForUpdate/{id}")
     public String showFormForUpdate(@PathVariable ( value = "id") long id, Model model) {
 
         //get student from the service

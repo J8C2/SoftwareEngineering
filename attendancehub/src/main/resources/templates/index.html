@@ -30,7 +30,7 @@
                 <td th:text="${student.firstName}"></td>
                 <td th:text="${student.lastName}"></td>
                 <td th:text="${student.email}"></td>
-                <td th:ref="@{/showformForUpdate/{id}(id=${student.id})}" class="btn btn-primary">Update</a></td>
+                <td> <a th:href="@{/showFormForUpdate/{id}(id=${student.id})}" class="btn btn-primary">Update</a></td>
             </tr>
         </tbody>
     </table>
