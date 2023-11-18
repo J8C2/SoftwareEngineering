@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.attendance.attendancehub.model.Student;
@@ -42,6 +43,18 @@ public class StudentController {
         studentService.saveStudent(student);
         return "redirect:/"; // redirect to homepage
 
+    }
+
+    @GetMapping("/showFormUpdate/{id}")
+    public String showFormForUpdate(@PathVariable ( value = "id") long id, Model model) {
+
+        //get student from the service
+        Student student = studentService.getStudentById(id);
+
+        //set student as a model attribute to pr-populate the form
+        model.addAttribute("student", student);
+
+        return "update_student";
     }
 
 }
