@@ -17,14 +17,6 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
     
-    //display the list of students
-    @GetMapping("/")
-    public String viewHomePage(Model model) {
-
-        model.addAttribute("listStudents", studentService.getAllStudents());
-        return "index";
-    }
-
     //Enables Controller to handle student form request
     @GetMapping("/showNewStudentForm")
     public String showNewStudentForm(Model model) {
@@ -35,13 +27,24 @@ public class StudentController {
         return "new_Student";
     }
 
+    @GetMapping("/showAllStudents")
+    public String showAllStudents(Model model) {
+
+        //create model attribute to bind form data
+        //Student student = new Student();
+        //model.addAttribute("student", student);
+        model.addAttribute("listStudents", studentService.getAllStudents());
+        return "allStudents";
+    }
+
+
     //crating a controller to handle save student request
     @PostMapping("/saveStudent")
     public String SaveStudent(@ModelAttribute("student") Student student) {
 
         //Save Student to database
         studentService.saveStudent(student);
-        return "redirect:/"; // redirect to homepage
+        return "redirect:/showAllStudents"; // redirect to homepage
 
     }
 
@@ -64,7 +67,7 @@ public class StudentController {
         //call delete student method
         this.studentService.deleteStudentById(id);
     
-        return "redirect:/";
+        return "redirect:/showAllStudents";
     }
 
 }

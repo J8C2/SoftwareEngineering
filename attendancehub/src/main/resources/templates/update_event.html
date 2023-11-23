@@ -18,32 +18,33 @@
 
     <div class="container">
        
-        <h2> Update Student</h2>
+        <h2> Update Event</h2>
 
-        <img th:src="@{/s1.png}" alt="s1.png" width="400" height="400">
+        <img th:src="@{/spongebob.webp}" alt="spongebob.webp" width="400" height="400">
 
-
-        <form action="#" th:action="@{/saveStudent}" th:object ="${student}" method="POST">
+        <form action="#" th:action="@{/saveEvent}" th:object ="${event}" method="POST">
             
             <!-- Add hidden form field to handle update -->
             <input type="hidden" th:field="*{id}" />
             
-            <input type="text" th:field="*{firstName}" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{eventName}" class="form-control mb-4 col-4">
             
-            <input type="text" th:field="*{lastName}" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{eventDate}" class="form-control mb-4 col-4">
             
-            <input type="text" th:field="*{email}" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{eventDescription}" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{eventcode}" class="form-control mb-4 col-4">
             
-            <button type="submit" class="btn btn-info col-2"> Update Student</button>
+            <button type="submit" class="btn btn-info col-2"> Update Event</button>
 
         </form>
         <hr>
-        <a th:href = @{/showAllStudents}> Back to Student List</a>
+        <a th:href = @{/showAllEvents}> Back to Event List</a>
     </div>
 
     <div align="center" class="container my-2" style="background-color: #34db34; color: #fff; padding: 20px;">
 
     </div> 
-    
+
 </body>
 </html>

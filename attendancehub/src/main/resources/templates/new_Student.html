@@ -9,10 +9,19 @@
     crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
+
+    <div align="center" class="container my-2" style="background-color: #34db34; color: #fff; padding: 20px;">
+    
         <h1> Attendance Hub</h1>
+    
+    </div> 
+
+    <div class="container">
+        
         <hr>
         <h2> Save Student</h2>
+
+        <img th:src="@{/A+.jpg}" alt="A+.jpg">
 
         <form action="#" th:action="@{/saveStudent}" th:object ="${student}" method="POST">
             <input type="text" th:field="*{firstName}" 
@@ -27,8 +36,15 @@
             <button type="submit" class="btn btn-info col-2"> Save Student</button>
 
         </form>
+
         <hr>
-        <a th:href = @{/}> Back to Student List</a>
+        <a th:href = @{/showAllStudents}> Back to Student List</a>
     </div>
+
+    <div align="center" class="container my-2" style="background-color: #34db34; color: #fff; padding: 20px;">
+
+    </div> 
+
+        
 </body>
 </html>

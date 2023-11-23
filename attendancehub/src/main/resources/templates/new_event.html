@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Attendance Hub</title>
+<link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous">
+</head>
+<body>
+
+    <div align="center" class="container my-2" style="background-color: #34db34; color: #fff; padding: 20px;">
+    
+        <h1> Attendance Hub</h1>
+    
+    </div> 
+
+    <div class="container">
+        
+        <hr>
+        <h2> Save Event</h2>
+
+        <img th:src="@{/minions.jpg}" alt="minions.jpg">
+
+        <form action="#" th:action="@{/saveEvent}" th:object ="${event}" method="POST">
+            <input type="text" th:field="*{eventName}" 
+            placeholder="Event Name" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{eventDate}" 
+            placeholder="Event Date" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{eventDescription}" 
+            placeholder="Event Description" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{eventcode}" 
+            placeholder="Event Code" class="form-control mb-4 col-4">
+
+
+            <button type="submit" class="btn btn-info col-2"> Save Event</button>
+
+        </form>
+
+        <hr>
+        <a th:href = @{/showAllEvents}> Back to Event List</a>
+    </div>
+
+    <div align="center" class="container my-2" style="background-color: #34db34; color: #fff; padding: 20px;">
+
+    </div> 
+
+        
+</body>
+</html>

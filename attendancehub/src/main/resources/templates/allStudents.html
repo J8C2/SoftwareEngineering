@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Attendance Hub</title>
+
+<link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div align="center" class="container my-2" style="background-color: #34db34; color: #fff; padding: 20px;">
+    
+        <h1> Attendance Hub</h1>
+    
+    </div> 
+
+    <div align="center" class="container my-2" style="background-color: #160c9e;">
+        <h2 style="color: white; font-size: 30px"> List of All Students</h2>
+
+    </div>
+
+<div align="center" class="container my-2">
+
+
+    <div align="center" class="container my-2">
+
+        <img th:src="@{/student 1.webp}" alt="student 1.webp">
+        
+    </div>
+
+    <a th:href = "@{/}" class="btn btn-primary btn-sm mb-3" style="background-color: #160c9e;"> Back To HomePage</a>
+    <a th:href = "@{/showNewStudentForm}" class="btn btn-primary btn-sm mb-3" style="background-color: #160c9e;"> Add Student</a>
+
+    <table border="1" class = "table table-striped table-responsive-md">
+        <thead>
+            <tr>
+                <th> Student First Name</th>
+                <th> Student Last Name</th>
+                <th> Student Email</th>
+                <th> Actions </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="student : ${listStudents}">
+                <td th:text="${student.firstName}"></td>
+                <td th:text="${student.lastName}"></td>
+                <td th:text="${student.email}"></td>
+                <td> <a th:href="@{/showFormForUpdate/{id}(id=${student.id})}" class="btn btn-primary">Update</a>
+                    <a th:href="@{/deleteStudent/{id}(id=${student.id})}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>    
+
+<div align="center" class="container my-2" style="background-color: #34db34; color: #fff; padding: 20px;">
+
+</div> 
+
+</body>
+</html>
+  

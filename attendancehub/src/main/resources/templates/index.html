@@ -12,31 +12,52 @@
 </head>
 <body>
 
-<div align="center" class="container my-2">
+
+<div align="center" class="container my-2" style="background-color: #34db34; color: #fff; padding: 20px;">
+    
     <h1> Attendance Hub</h1>
 
-    <a th:href = "@{/showNewStudentForm}" class="btn btn-primary btn-sm mb-3"> Add Student</a>
-    <table border="1" class = "table table-striped table-responsive-md">
-        <thead>
-            <tr>
-                <th> Student First Name</th>
-                <th> Student Last Name</th>
-                <th> Student Email</th>
-                <th> Actions </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="student : ${listStudents}">
-                <td th:text="${student.firstName}"></td>
-                <td th:text="${student.lastName}"></td>
-                <td th:text="${student.email}"></td>
-                <td> <a th:href="@{/showFormForUpdate/{id}(id=${student.id})}" class="btn btn-primary">Update</a>
-                    <a th:href="@{/deleteStudent/{id}(id=${student.id})}" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>    
+</div> 
+
+<div align="center" class="container my-2" style="background-color: #350236; width: 180px; height: 30px; color: white;">
+    
+    Admin Console
+
+</div> 
+
+
+<br>
+<br>
+
+<div align="center" class="container my-2">
+
+<img th:src="@{/Happy web pic.png}" alt="Happy web pic.png">
+
+</div>
+
+<br>
+<br>
+
+<div align="center" class="container my-2">
+
+    <a th:href = "@{/showAllStudents}" class="btn btn-primary btn-sm mb-3" style="width: 150px; height: 50px; font-size: 20px;  background-color: #db3734;"> Students</a>
+    <a th:href = "@{/showAllEvents}" class="btn btn-primary btn-sm mb-3" style="width: 150px; height: 50px; font-size: 20px;background-color: #dbbf34; "> Events</a>
+
+</div> 
+
+<div align="center">
+<a th:href = "@{/showAllEvents}" class="btn btn-primary btn-sm mb-3" style="width: 180px; height: 50px; font-size: 20px; background-color: #160c9e;"> Track Attendance</a>
+</div>
+
+
+
+<div align="center" class="container my-2" style="background-color: #3498db; color: #fff; padding: 20px;">
+    
+    <h1> Your Perfect Attendance App! </h1>
+
+</div> 
+
+
 </body>
 </html>
   
