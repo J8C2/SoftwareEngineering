@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.attendance.attendancehub.model.Event;
 import com.attendance.attendancehub.service.EventService;
-
 @Controller
 public class EventController {
 

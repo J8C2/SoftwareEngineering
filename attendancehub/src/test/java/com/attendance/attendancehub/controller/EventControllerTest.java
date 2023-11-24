@@ -9,6 +9,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -30,14 +31,25 @@ import static org.junit.jupiter.api.Assertions.*;
 class EventControllerTest {
 
     @Autowired
-    private MockMvc mvc;
+    private MockMvc mockMvc;
+
+    @Mock
+    private EventService eventService;
+
+    @InjectMocks
+    private EventController eventController;
+
+    @BeforeEach
+    void setUp() {
+        mockMvc = MockMvcBuilders.standaloneSetup(eventController).build();
+    }
 
     @Test
     void viewHomePage() throws Exception {
-        RequestBuilder request = MockMvcRequestBuilders.get("/");
-        MvcResult result = mvc.perform(request).andReturn();
-        int statusCode = result.getResponse().getStatus();
-        assertEquals(200, statusCode);
+        mockMvc.perform(get("/"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("index"))
+                .andExpect(content().string(containsString(" Your Perfect Attendance App! ")));
     }
 
     @Test
