@@ -24,8 +24,7 @@ public class serviceimpl implements service
 
     @Autowired
     private UserRepository userRepository;
-
-    @Autowired
+    
     private BCryptPasswordEncoder passwordEncoder;
 
     public serviceimpl(UserRepository userRepository) 

@@ -5,14 +5,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
 import com.attendancehub.attendancehub.service.service;
 
 @Configuration
-public class Security {
+@EnableWebSecurity
+public class SecurityConfig{
 
     @Autowired
     private service userService;
@@ -32,22 +33,29 @@ public class Security {
         return auth;
     }
 
-
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception 
-    {
-            http.authorizeHttpRequests((authz) -> authz
-                .anyRequest().authenticated().requestMatchers(
-                    "/registration**",
-                    "/js/**",
-                    "/css/**",
-                    "/img/**").permitAll().anyRequest().authenticated())
-                    .formLogin(formLogin -> formLogin.loginPage("/login").permitAll())
-                    .logout(logout -> logout.invalidateHttpSession(true).clearAuthentication(true).logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                    .logoutSuccessUrl("/login?logout").permitAll());
-
-                    return http.build();
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http.authorizeHttpRequests(authz -> authz
+                .anyRequest().authenticated()
+                .requestMatchers(
+                        "/registration**",
+                        "/js/**",
+                        "/css/**",
+                        "/img/**"
+                ).permitAll()
+        )
+        .formLogin(formLogin -> formLogin
+                .loginPage("/loginPage").permitAll()
+        )
+        .logout(logout -> logout
+                .invalidateHttpSession(true)
+                .clearAuthentication(true)
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .logoutSuccessUrl("/loginPage?logout").permitAll()
+        );
+    
+        return http.build();
     }
+    
 
 }
 
