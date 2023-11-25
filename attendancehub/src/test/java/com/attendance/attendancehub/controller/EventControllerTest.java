@@ -20,8 +20,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.instanceOf;
+import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -83,13 +82,16 @@ class EventControllerTest {
 
         when(eventService.getAllEvents()).thenReturn(mockEvents);
 
+        mvc.perform(get("/showAllEvents")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(model().attributeExists("listEvents"))
+                .andExpect(view().name("allEvents"));
 
-//
 //        mvc.perform(get("/showAllEvents"))
 //                .andExpect(status().isOk())
 //                .andExpect(view().name("allEvents"))
-//                .andExpect(model().attributeExists("listEvents"))
-//                .andExpect(model().attribute("listEvents", mockEvents))
+//
 //                .andExpect(jsonPath("[0].eventName").value("foodEvent"));
     }
 
