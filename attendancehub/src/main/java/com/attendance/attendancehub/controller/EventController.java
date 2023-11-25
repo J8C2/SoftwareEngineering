@@ -42,6 +42,15 @@ public class EventController {
         return "allEvents";
     }
 
+    
+    @GetMapping("/showAllEvents2")
+    public String showAllEvents2(Model model) {
+
+        
+        model.addAttribute("listEvents", eventService.getAllEvents());
+        return "allEvents2";
+    }
+
 
     //crating a controller to handle save event request
     @PostMapping("/saveEvent")

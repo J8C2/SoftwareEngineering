@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Attendance Hub</title>
+
+<link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous">
+
+</head>
+<body>
+
+
+<div align="center" class="container my-2" style="background-color: #34db34; color: #fff; padding: 20px;">
+    
+    <h1> Attendance Hub</h1>
+
+</div> 
+
+<div align="center" class="container my-2" style="background-color: #350236; width: 180px; height: 30px; color: white;">
+    
+    Admin Console
+    <br>
+
+    <a th:href = "@{/}" class="btn btn-primary btn-sm mb-3" style="width: 100px; height: 30px; font-size: 10px;background-color: #000000; "> Back to Login Page</a>
+
+
+</div> 
+
+
+<div align="center" class="container my-2">
+
+<img th:src="@{/happykid.png}" alt="happykid.png">
+
+</div>
+
+
+<div align="center" class="container my-2">
+
+    <a th:href = "@{/showAllStudents}" class="btn btn-primary btn-sm mb-3" style="width: 150px; height: 50px; font-size: 20px;  background-color: #ff0500;"> Students</a>
+    <a th:href = "@{/showAllEvents}" class="btn btn-primary btn-sm mb-3" style="width: 150px; height: 50px; font-size: 20px;background-color: #f8d10f; "> Events</a>
+    <a th:href = "@{/showAllEvents}" class="btn btn-primary btn-sm mb-3" style="width: 180px; height: 50px; font-size: 20px; background-color: #160c9e;"> Track Attendance</a>
+
+</div> 
+
+
+
+<div align="center" class="container my-2" style="background-color: #054a79; color: #fff; padding: 20px;">
+    
+    <h1> Your Perfect Attendance App! </h1>
+
+</div> 
+
+
+</body>
+</html>
+  

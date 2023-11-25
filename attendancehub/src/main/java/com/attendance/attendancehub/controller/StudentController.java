@@ -70,4 +70,16 @@ public class StudentController {
         return "redirect:/showAllStudents";
     }
 
+    @GetMapping("/adminPage")
+    public String viewAdminConsole(Model model) {
+
+        return "adminConsole";
+    }
+
+    @GetMapping("/userPage")
+    public String viewUserConsole(Model model) {
+
+        return "userConsole";
+    }
+
 }
