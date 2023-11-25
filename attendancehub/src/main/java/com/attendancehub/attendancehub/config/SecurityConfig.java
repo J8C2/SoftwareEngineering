@@ -33,26 +33,17 @@ public class SecurityConfig{
         return auth;
     }
 
+    @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(authz -> authz
-                .anyRequest().authenticated()
-                .requestMatchers(
-                        "/registration**",
-                        "/js/**",
-                        "/css/**",
-                        "/img/**"
-                ).permitAll()
-        )
-        .formLogin(formLogin -> formLogin
-                .loginPage("/loginPage").permitAll()
-        )
-        .logout(logout -> logout
-                .invalidateHttpSession(true)
-                .clearAuthentication(true)
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/loginPage?logout").permitAll()
-        );
-    
+        http.csrf().disable().authorizeHttpRequests()
+        .requestMatchers("/registration").permitAll().and()
+        .formLogin().loginPage("/loginPage")
+        .loginProcessingUrl("/loginPage")
+        .defaultSuccessUrl("/home", true).permitAll()
+        .and().logout().invalidateHttpSession(true).clearAuthentication(true)
+        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+        .logoutSuccessUrl("/loginPage?logout").permitAll();
+
         return http.build();
     }
     
