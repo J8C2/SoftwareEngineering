@@ -12,7 +12,7 @@ import com.attendance.attendancehub.model.Student;
 import com.attendance.attendancehub.service.StudentService;
 
 @Controller
-public class StudentController {
+public class  StudentController {
 
     @Autowired
     private StudentService studentService;
