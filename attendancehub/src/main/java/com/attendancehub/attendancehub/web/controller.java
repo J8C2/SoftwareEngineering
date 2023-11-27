@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.attendancehub.attendancehub.RegistrationDto;
 import com.attendancehub.attendancehub.service.service;
-import com.attendancehub.attendancehub.web.dto.RegistrationDto;
 
 @Controller
 @RequestMapping("/registration")

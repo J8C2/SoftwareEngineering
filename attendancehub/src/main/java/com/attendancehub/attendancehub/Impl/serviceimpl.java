@@ -12,11 +12,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.attendancehub.attendancehub.RegistrationDto;
 import com.attendancehub.attendancehub.Role;
 import com.attendancehub.attendancehub.User;
 import com.attendancehub.attendancehub.repository.UserRepository;
 import com.attendancehub.attendancehub.service.service;
-import com.attendancehub.attendancehub.web.dto.RegistrationDto;
 
 @Service
 public class serviceimpl implements service

@@ -1,4 +1,4 @@
-package com.attendancehub.attendancehub.web.dto;
+package com.attendancehub.attendancehub;
 
 public class RegistrationDto {
     private String firstName;
