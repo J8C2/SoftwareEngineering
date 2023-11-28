@@ -58,7 +58,7 @@ public class EventServiceImpl implements EventService{
     }
 
     @Override
-public boolean isValidAttendanceCode(long eventId, String enteredCode) {
+    public boolean isValidAttendanceCode(long eventId, String enteredCode) {
     Optional<Event> optional = eventRepository.findById(eventId);
     if (optional.isPresent()) {
         Event event = optional.get();
@@ -70,7 +70,7 @@ public boolean isValidAttendanceCode(long eventId, String enteredCode) {
 }
 
 @Override
-public void markStudentAttendance(long eventId, long studentId) {
+public void markStudentAttendance(long eventId, long studentId, String enteredCode) {
     Optional<Event> optionalEvent = eventRepository.findById(eventId);
     Optional<Student> optionalStudent = studentRepository.findById(studentId);
 
@@ -79,7 +79,7 @@ public void markStudentAttendance(long eventId, long studentId) {
         Student student = optionalStudent.get();
 
         // Assuming your isValidAttendanceCode method is already implemented
-        if (isValidAttendanceCode(eventId, student.getEnteredAttendanceCode())) {
+        if (isValidAttendanceCode(eventId, enteredCode)) {
             Set<Event> studentEvents = student.getEvents();
             studentEvents.add(event);
             student.setAttendanceStatus(true);
@@ -92,6 +92,8 @@ public void markStudentAttendance(long eventId, long studentId) {
     }
 }
 
+}
+
 
     
-}
+

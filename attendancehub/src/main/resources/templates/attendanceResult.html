@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Result</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<div align="center" class="container my-2" style="background-color: #34db34; color: #fff; padding: 20px;">
+    <h1>Attendance Hub</h1>
+</div>
+
+<div align="center" class="container my-2">
+
+    <div th:if="${message}" class="success-container">
+        <img th:src="@{/Emoji3.jpg}" alt="Success Image" width="300" height="300" />
+    </div>
+    <div th:if="${message}" class="success-message">
+        <div th:text="${message}"></div>
+    </div>
+    
+    <style>
+        .success-container {
+            text-align: center;
+        }
+    
+        .success-message {
+            background-color: green;
+            padding: 10px;  /* Adjust as needed */
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+    
+
+    <div th:if="${error}" class="error-container">
+        <img th:src="@{/Emoji2.jpg}" alt="Error Image" width="300" height="300" />
+    </div>
+    <div th:if="${error}" class="error-message">
+        <div th:text="${error}"></div>
+    </div>
+    
+    <style>
+        .error-container {
+            text-align: center;
+        }
+    
+        .error-message {
+            background-color: red;
+            padding: 10px;  /* Adjust as needed */
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+
+<hr>
+
+
+<a th:href = "@{/showAllEvents2}" class="btn btn-primary btn-sm mb-3" style="background-color: #000000;"> Back to Events Page</a>
+
+<a th:href = "@{/takeAttendance1/{id}}" class="btn btn-primary btn-sm mb-3" style="background-color: #4c3838;"> Back to Attendance Page</a>
+
+
+</body>
+</html>

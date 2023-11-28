@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+
 import com.attendance.attendancehub.model.Student;
 import com.attendance.attendancehub.service.StudentService;
 
@@ -81,5 +82,39 @@ public class StudentController {
 
         return "userConsole";
     }
+
+/* 
+    @PostMapping("/markStudentAttendance")
+    public String markAttendance(
+            @RequestParam("eventId") long eventId,
+            @ModelAttribute("enteredCode") String enteredCode,
+            Model model
+    ) {
+        try {
+            // Validate attendance code and mark attendance
+            if (eventService.isValidAttendanceCode(eventId, enteredCode)) {
+                // Assuming you have a logged-in student, you can get the student from the session
+                // For demonstration purposes, let's assume the student is identified by a studentId
+                long studentId = 1; // Replace with the actual student ID
+
+                // Mark attendance for the student
+                eventService.markStudentAttendance(eventId, studentId);
+
+                model.addAttribute("isAttendanceCorrect", true);
+            } else {
+                model.addAttribute("isAttendanceCorrect", false);
+            }
+
+            // Fetch the updated list of events and add it to the model
+            model.addAttribute("listEvents", eventService.getAllEvents());
+        } catch (Exception e) {
+            // Handle exceptions as needed
+            e.printStackTrace(); // For demonstration purposes, print the stack trace
+        }
+
+        // Return the name of the HTML template to display
+        return "your-events-template"; // Replace with the actual template name
+    }
+    */
 
 }

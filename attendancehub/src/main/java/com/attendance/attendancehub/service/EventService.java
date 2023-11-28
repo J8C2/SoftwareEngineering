@@ -11,7 +11,7 @@ public interface EventService {
     Event getEventById(long id);
     void deleteEventById(long id);
     boolean isValidAttendanceCode(long eventId, String enteredCode);
-    void markStudentAttendance(long eventId, long studentId);
+    void markStudentAttendance(long eventId, long studentId, String enteredCode);
 
 
 }

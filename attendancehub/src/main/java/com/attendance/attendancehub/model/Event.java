@@ -27,6 +27,17 @@ public class Event {
     @Column(name = "EventCode")
     private String eventcode;
 
+    @Column
+    private String attendanceStatus = "-----------";
+
+
+    public String getAttendanceStatus() {
+        return attendanceStatus;
+    }
+
+    public void setAttendanceStatus(String attendanceStatus) {
+        this.attendanceStatus = attendanceStatus;
+    }
 
     public long getId() {
         return id;
