@@ -1,10 +1,16 @@
 package com.attendance.attendancehub.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -24,7 +30,52 @@ public class Student {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "Attendance_Status")
+private boolean attendanceStatus;
 
+
+@Column(name = "entered_attendance_code")
+private String enteredAttendanceCode;
+
+
+@ManyToMany
+    @JoinTable(
+        name = "attendance",
+        joinColumns = @JoinColumn(name = "student_id"),
+        inverseJoinColumns = @JoinColumn(name = "event_id"))
+    private Set<Event> events = new HashSet<>();
+
+// getter and setter for attendanceStatus
+
+public String getEnteredAttendanceCode() {
+    return enteredAttendanceCode;
+}
+
+public void setEnteredAttendanceCode(String enteredAttendanceCode) {
+    this.enteredAttendanceCode = enteredAttendanceCode;
+}
+
+
+
+
+    // ... other methods ...
+
+    public Set<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(Set<Event> events) {
+        this.events = events;
+    }
+
+
+    public boolean isAttendanceStatus() {
+        return attendanceStatus;
+    }
+
+    public void setAttendanceStatus(boolean attendanceStatus) {
+        this.attendanceStatus = attendanceStatus;
+    }
 
     public long getId() {
         return id;

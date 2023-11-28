@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mark Attendance Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <!-- Add your custom CSS links if needed -->
+</head>
+<body>
+
+    <div align="center" class="container my-2" style="background-color: #34db34; color: #fff; padding: 20px;">
+        <h1>Attendance Hub</h1>
+    </div>
+
+    <div align="center" class="container my-2" style="background-color: #f8d10f;">
+        <h2 style="color: white; font-size: 30px">Mark Attendance for Event: <span th:text="${event.eventName}"></span></h2>
+    </div>
+
+    <div align="center" class="container my-2" style="background-color: #ff3333; color: #fff; padding: 20px;">
+        
+        <h1>Error</h1>
+        <p> OOPs! Wrong Event Code. Try Again! </p>
+    </div>
+    
+    <a th:href = "@{'/markAttendance1/{eventId}(id=${event.id})}" class="container my-2" style="background-color: #f0e84d;"> Re-enter Code!</a>
+  
+</body>
+</html>
+
+
+
+
+
+
+
